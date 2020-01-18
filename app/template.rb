@@ -1,5 +1,5 @@
-copy_file "app/assets/stylesheets/application.scss"
-remove_file "app/assets/stylesheets/application.css"
+copy_file "app/javascript/stylesheets/application.scss"
+remove_file "app/javascript/stylesheets/application.css"
 
 copy_file "app/controllers/home_controller.rb"
 copy_file "app/helpers/layout_helper.rb"
