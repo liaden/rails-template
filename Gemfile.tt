@@ -67,6 +67,7 @@ end
 
 group :test do
   gem "capybara"<%= gemfile_requirement("capybara") %>
+  gem "database_cleaner"
   gem "launchy"
   gem "mock_redis"
   gem "rspec-html-matchers"
