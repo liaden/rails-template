@@ -55,9 +55,6 @@ group :development do
 <% end -%>
   gem "terminal-notifier", require: false
   gem "terminal-notifier-guard", require: false
-<% unless gemfile_requirement("puma") -%>
-  gem "thin", require: false
-<% end -%>
   gem "xray-rails", ">= 0.1.18"
 end
 
