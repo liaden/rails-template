@@ -8,6 +8,7 @@ gem "autoprefixer-rails", ">= 5.0.0.1"
 gem "bcrypt"<%= gemfile_requirement("bcrypt") %>
 gem "bootsnap"<%= gemfile_requirement("bootsnap") %>, require: false
 gem "coffee-rails"<%= gemfile_requirement("coffee-rails") %>
+gem "dalli"
 gem "dotenv-rails", ">= 2.0.0"
 gem "hamlit-rails"
 gem "oj"
@@ -31,7 +32,9 @@ end
 
 group :development, :test do
   gem "byebug"
+  gem "factory_bot_rails"
   gem "rspec-rails"
+  gem "pry-rails"
 end
 
 group :development do
