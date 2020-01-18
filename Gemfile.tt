@@ -28,6 +28,7 @@ end
 
 group :development, :test do
   gem "byebug"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -39,7 +40,7 @@ group :development do
   gem "bundler-audit", ">= 0.5.0", require: false
   gem "guard", ">= 2.2.2", require: false
   gem "guard-livereload", require: false
-  gem "guard-minitest", require: false
+  gem 'guard-rspec', require: false
   gem "letter_opener"
   gem "listen"<%= gemfile_requirement("listen") %>
   gem "overcommit", ">= 0.37.0", require: false
@@ -63,8 +64,8 @@ end
 group :test do
   gem "capybara"<%= gemfile_requirement("capybara") %>
   gem "launchy"
-  gem "minitest-ci", ">= 3.3.0", require: false
   gem "mock_redis"
+  gem "rspec-html-matchers"
   gem "selenium-webdriver"
   gem "shoulda-context"
   gem "shoulda-matchers", ">= 3.0.1"

@@ -30,7 +30,7 @@ def apply_template!
   apply "config/template.rb"
   apply "doc/template.rb"
   apply "lib/template.rb"
-  apply "test/template.rb"
+  apply "spec/template.rb"
 
   apply "variants/bootstrap/template.rb" if apply_bootstrap?
 
@@ -39,11 +39,12 @@ def apply_template!
 
   run_with_clean_bundler_env "bin/setup"
   run_with_clean_bundler_env "bin/rails webpacker:install"
+  run_with_clean_bundler_env "bin/rails generate rspec:install"
   create_initial_migration
   generate_spring_binstubs
 
   binstubs = %w[
-    annotate brakeman bundler bundler-audit guard rubocop sidekiq
+    annotate brakeman bundler bundler-audit guard rubocop rspec sidekiq
     terminal-notifier
   ]
   run_with_clean_bundler_env "bundle binstubs #{binstubs.join(' ')} --force"
@@ -103,9 +104,9 @@ def assert_valid_options
     skip_gemfile: false,
     skip_bundle: false,
     skip_git: false,
-    skip_system_test: false,
-    skip_test: false,
-    skip_test_unit: false,
+    skip_system_test: true,
+    skip_test: true,
+    skip_test_unit: true,
     edge: false
   }
   valid_options.each do |key, expected|
