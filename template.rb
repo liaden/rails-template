@@ -40,6 +40,8 @@ def apply_template!
   run_with_clean_bundler_env "bin/setup"
   run_with_clean_bundler_env "bin/rails webpacker:install"
   run_with_clean_bundler_env "bin/rails generate rspec:install"
+  run_with_clean_bundler_env "rails haml:replace_erbs"
+
   create_initial_migration
   generate_spring_binstubs
 
