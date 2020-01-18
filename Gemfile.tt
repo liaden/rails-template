@@ -17,6 +17,7 @@ gem "rails", "~> <%= Rails.version %>"
 gem "redis"<%= gemfile_requirement("redis") %>
 gem "sass-rails", "~> 6.0"
 gem "sidekiq", ">= 4.2.0"
+gem "sidekiq-scheduler"
 <% if gemfile_requirement("turbolinks") -%>
 gem "turbolinks"<%= gemfile_requirement("turbolinks") %>
 <% end -%>
