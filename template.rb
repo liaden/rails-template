@@ -55,6 +55,7 @@ def apply_template!
   run_rubocop_autocorrections
 
   unless any_local_git_commits?
+    git commit: "--allow-empty -m 'Initial commit'"
     git add: "-A ."
     git commit: "-n -m 'Set up project'"
     if git_repo_specified?
